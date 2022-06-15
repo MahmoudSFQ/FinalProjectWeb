@@ -28,7 +28,7 @@
     </article>
     <a  href="/posts" class="bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow">Go Back</a>
     <hr class="mt-5">
-    
+    @if(Auth::check())
     <form method="post" action="/posts/{{$post->id}}/store">
     @csrf
     <label for="">comment</label>
@@ -39,25 +39,24 @@
     
 
     </form>
-
+    
     <h2  class="text-x1 font-bold text-blue-900">Comment</h2>
     <hr class="mt-5">
     @foreach ($post->comments as $comment)
-       <p>{{$comment->content}}</p>
+       <p> {{Auth::user()->name}} : {{$comment->content}}</p>
       <hr class="mt-5">
-      <form action="/posts/{{$post->id}}/show/{id}">
-        @csrf 
-        @method('DELETE')
-       
-        <button class=" bg-red-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow" >Delete</button>
-        <!-- <button class=" bg-yellow-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow" >edit</button> -->
-    </form>
+      
     @endforeach
-  
+    @else
+    @foreach ($post->comments as $comment)
+       <p>  {{$comment->content}}</p>
+      <hr class="mt-5">
+      
+    @endforeach
     
     </div> 
- 
-
+    @endif
+   
 
   
   <script src="js/jquery.js"></script>

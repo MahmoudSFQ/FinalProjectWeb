@@ -37,9 +37,15 @@ Route::get('/posts/{post}/show', 'App\Http\Controllers\PostController@show');
 Route::get('/posts/{post}','App\Http\Controllers\PostController@destroy');
 
 
+
+
+
 Route::post('/posts/{post}/store','App\Http\Controllers\CommentController@store');
 
-Route::get('/posts/{post}/show/{id}','App\Http\Controllers\CommentController@destroy');
+
+
+
+
 
 
 
