@@ -40,11 +40,11 @@
 
     </form>
     
-    <h2  class="text-x1 font-bold text-blue-900">Comment</h2>
-    <hr class="mt-5">
+    <h2  style="margin-bottom:10px"  class="text-x1 font-bold text-blue-900">Comment</h2>
+    
     @foreach ($post->comments as $comment)
-       <p> {{Auth::user()->name}} : {{$comment->content}}</p>
-      <hr class="mt-5">
+       <p style="border:1px solid gray; padding:10px; border-radius:10px ; display: inline-block;margin-bottom:5px" > {{Auth::user()->name}} : {{$comment->content}}</p>
+      <br >
       
     @endforeach
     @else

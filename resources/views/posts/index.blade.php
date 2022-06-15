@@ -36,7 +36,7 @@
     <article class="mb-2">
 
     <h2 class="text-x1 font-bold  text-blue-900 mb-5">{{$post->title}}</h2>
-   
+    @if(Auth::check())
     <form method="GET" action="/posts/{{$post->id}}">
         @csrf 
         @method('DELETE')
@@ -47,6 +47,9 @@
     </form>
     <hr class="mt-5">
     </article>
+    @else
+    <a href="/posts/{{$post->id}}/show" class=" bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow">show</a>
+    @endif
     @endforeach
     </div> 
     
