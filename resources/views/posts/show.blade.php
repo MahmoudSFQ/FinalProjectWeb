@@ -21,8 +21,8 @@
     <article class="mb-2">
 
     
-    <h2  class="text-x1 font-bold text-blue-900">{{$post->title}}</h2>
-    <hr class="mt-5">
+    <h1 class="text-x1 font-bold text-blue-900">{{$post->title}}</h1>
+    <hr class="mt-5 mb-10">
     <p class="text-md text-gray-600">{{$post->content}}</p>
     <hr class="mt-5">
     </article>

@@ -16,6 +16,7 @@
     <a class="text-4xl font-bold mb-4 mr-96">Welcome {{Auth::user()->name}}</a>
    
     <a class=" bg-gray-500 tracking-wide text-white  px-6 py-2  inline-block mb-6 shadow-lg rounded hover:shadow" href="logout">logout</a>
+    <br>
     <a href="/posts/create" class=" bg-blue-500 tracking-wide text-white px-6 py-2 inline-block mb-6 shadow-lg rounded hover:shadow" >Create post</a>
     <hr class="mt-10">
     <h1 class="text-4xl font-bold mb-4">Articles</h1>
@@ -28,14 +29,14 @@
     
     @endif
 
-    
+    </form>
     
     
 
     @foreach ($posts as $post)
     <article class="mb-2">
 
-    <h2 class="text-x1 font-bold  text-blue-900 mb-5">{{$post->title}}</h2>
+    <h2 class="text-x1 mt-20 font-bold  text-blue-900 mb-5">{{$post->title}}</h2>
     @if(Auth::check())
     <form method="GET" action="/posts/{{$post->id}}">
         @csrf 
